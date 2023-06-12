@@ -1,0 +1,24 @@
+<form [formGroup]="formulario">
+  <input type="search"
+         placeholder="CT"
+         formControName="ct"
+         autofocus
+  >
+  <button>Pesquisar</button>
+
+</form>
+
+<div>
+  <form action="">
+    <div *ngFor="let a of listaDados;last as isLast">
+       <div *ngIf="isLast"><label>Linha:</label>{{ a.workCenterCode }}</div>
+       <div *ngIf="isLast"><label>Data.Inicio:</label>{{ a.operationStartDate }}</div>
+       <div *ngIf="isLast"><label>Nr.Ord:</label>{{ a.productionOrderNumber }}</div>
+       <div *ngIf="isLast"><label>Split:</label>{{ a.splitNumber }}</div>
+       <div *ngIf="isLast"><label>Item:</label>{{ a.itemDescription }}</div>
+       <div *ngIf="isLast"><label>Qtde.Prevista:</label>{{ a.plannedQuantity }}</div>
+       <div *ngIf="isLast"><label>Qtde.Produzida:</label>{{ a.approvedQuantity }}</div>
+       <div *ngIf="isLast"><label>Qtde.Refugada:</label>{{ a.scrapQuantity }}</div>
+    </div>
+  </form>
+</div>
